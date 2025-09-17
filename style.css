@@ -284,8 +284,8 @@ button.delete {
   button.done,
   button.undo,
   button.delete {
-    font-size: 19px;
-    padding: 10x 23px;
+    font-size: 16px;
+    padding: 13x 23px;
     font-weight: bold;
   }
 }
