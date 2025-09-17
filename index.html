@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>To Do-app</title>
+  </head>
+  <body>
+    <h1>To Do</h1>
+    <h2 class="subheading">
+      Alt samlet på ét sted, <br />
+      så du kan holde fokus på det vigtige
+    </h2>
+
+    <div id="input-area">
+      <input id="task-input" type="text" placeholder="Hvad vil du tilføje?" />
+      <input
+        id="task-amount"
+        type="number"
+        placeholder="Antal (valgfrit)"
+        min="1"
+      />
+      <button id="add-task">Tilføj</button>
+    </div>
+
+    <div id="lists">
+      <div>
+        <h2>Igangværende</h2>
+        <ul id="todo-list"></ul>
+      </div>
+      <div>
+        <h2>Færdige</h2>
+        <ul id="done-list"></ul>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

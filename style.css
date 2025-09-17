@@ -1,0 +1,292 @@
+/* Reset */
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  background-image: url(/todo-app/img/blob-scene-haikei.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  text-align: center;
+  color: #fff;
+}
+
+/* H1 Header */
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 50px;
+  margin-bottom: 60px;
+  padding: 30px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.subheading {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8); /* lidt transparent for mindre fokus */
+  padding: 10px 20px;
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+/* H2 Subheaders */
+h2 {
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+/* Input area */
+#input-area {
+  margin-top: 30px;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+#input-area input {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 12px 18px;
+  font-size: 16px;
+  color: #fff;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+#input-area input:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "Poppins", sans-serif;
+  transition: opacity 0.2s;
+}
+
+input:focus::placeholder {
+  opacity: 0;
+}
+
+/* Buttons */
+#input-area button {
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+#input-area input::placeholder {
+  font-family: "Poppins", sans-serif;
+}
+
+#input-area button:hover {
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+/* Lists */
+#lists {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+  width: 320px;
+  min-height: 500px;
+  padding: 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  margin-bottom: 50px;
+}
+
+/* List items */
+li {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  margin: 8px 0;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 55px;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+li.new {
+  opacity: 0;
+  transform: translateX(-30px) rotate(-1deg);
+  animation: slideIn 0.4s ease forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+li span {
+  flex: 1;
+  text-align: left;
+  font-size: 16px;
+}
+
+/* Buttons inside list items */
+.buttons {
+  display: flex;
+  gap: 6px;
+}
+
+button.action {
+  border-radius: 50px;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px 14px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+button.action:hover {
+  transform: scale(1.05);
+}
+
+button.done {
+  background: rgba(76, 175, 80, 0.7);
+  color: #fff;
+}
+
+button.undo {
+  background: rgba(33, 150, 243, 0.7);
+  color: #fff;
+}
+
+button.delete {
+  background: rgba(244, 67, 54, 0.7);
+  color: #fff;
+}
+
+/* ----------------- */
+/* Mobile adjustments */
+/* ----------------- */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 32px;
+    padding: 20px;
+    margin-bottom: 25px;
+  }
+
+  h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .subheading {
+    font-size: 16px;
+    margin-bottom: 0px;
+  }
+
+  #lists {
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    gap: 0;
+  }
+
+  ul {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    min-height: 215px;
+    margin-bottom: 30px;
+  }
+
+  #lists {
+    display: block;
+    position: relative;
+    width: 100%;
+  }
+
+  #input-area {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  #input-area input,
+  #input-area button {
+    width: 80%;
+    font-size: 20px;
+    margin: auto;
+    padding: 20px 20px;
+  }
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  li.new {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  li span {
+    font-size: 18px;
+    margin: 17px 0px 20px 0px;
+    flex: 1;
+    text-align: center;
+  }
+
+  li .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+  }
+
+  .buttons {
+    gap: 20px;
+    display: flex;
+  }
+
+  button.done,
+  button.undo,
+  button.delete {
+    font-size: 19px;
+    padding: 17px 23px;
+    font-weight: bold;
+  }
+}
