@@ -31,7 +31,7 @@ h1 {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 18px;
-  color: rgba(255, 255, 255, 0.8); /* lidt transparent for mindre fokus */
+  color: rgba(255, 255, 255, 0.8);
   padding: 10px 20px;
   display: inline-block;
   margin-bottom: 30px;
@@ -197,9 +197,8 @@ button.delete {
   color: #fff;
 }
 
-/* ----------------- */
 /* Mobile adjustments */
-/* ----------------- */
+
 @media (max-width: 768px) {
   h1 {
     font-size: 32px;
